@@ -5,38 +5,39 @@ namespace AlifBank.Common.Helpers
     public class CalculatePercentage
     {
         public static double calculatePercentage(ProductType type, int leasingPeriod, int price) { 
+            double res = price;
             switch (type)
             {
                 case ProductType.TV:
                     if (leasingPeriod > 18)
                     {
                         //                        Calculate the percentage for TV 
-                        return price += price *(((leasingPeriod / 3) - 6) * 5/100);
+                        return res += price * (((leasingPeriod / 3) - 6) * 5.0/100);
                     }
                     else { 
-                        return price += price * (5/100);
+                        return res += price * (5.0/100);
                     }
 
                 case ProductType.Smartphone:
                     if (leasingPeriod > 18)
                     {
                         //                        Calculate the percentage for Smartphone
-                        return price += price * (((leasingPeriod / 3) - 6) * 3 / 100);
+                        return res += price * (((leasingPeriod / 3) - 6) * 3.0/100);
                     }
                     else
                     {
-                        return price += price * (3 / 100);
+                        return res += price * (3.0/100);
                     }
 
                 case ProductType.Computer:
                     if (leasingPeriod > 18)
                     {
                         //                        Calculate the percentage for Computer
-                        return price += price * (((leasingPeriod / 3) - 6) * 4 / 100);
+                        return res += price * (((leasingPeriod / 3) - 6) * 4.0/100);
                     }
                     else
                     {
-                        return price += price * (4 / 100);
+                        return res += price * (4.0/ 100);
                     }
                
                 default: return price;

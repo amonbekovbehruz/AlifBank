@@ -5,7 +5,7 @@ using AlifBank.Entities;
 
 namespace AlifBank.Services
 {
-    public class ItemService
+    public class ItemService : IItemService
     {
         public string Add(ItemDto.Add model, ref ICollection<Item> items)
         {
@@ -25,8 +25,7 @@ namespace AlifBank.Services
 
             items.Add(item);
 
-            SendSMS.SendDetailsSMS(item);
-            return "Added Successfully";
+            return $"Added Successfully {SendSMS.SendDetailsSMS(item)}";
         }
     }
 }
