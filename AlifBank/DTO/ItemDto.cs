@@ -35,7 +35,7 @@ namespace AlifBank.DTO
         public class Add : Base { }
 
         public class Get : IdHasBase {
-            public int PriceToPay { get; set; }
+            public double PriceToPay { get; set; }
         }
     }
 }

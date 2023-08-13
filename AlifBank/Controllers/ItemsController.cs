@@ -23,5 +23,29 @@ namespace AlifBank.Controllers
         public string AddItem(ItemDto.Add model) {
             return Service.Add(model, ref Items);
         }
+
+        [HttpGet]
+        [ProducesResponseType(typeof(ICollection<ItemDto.Get>), StatusCodes.Status204NoContent)]
+        public ICollection<ItemDto.Get> List()
+        {
+            ICollection<ItemDto.Get> result = new List<ItemDto.Get>();
+
+            foreach (var item in Items) {
+                result.Add(
+                    new ItemDto.Get
+                    {
+                        Id = item.Id,
+                        Name = item.Name,
+                        Description = item.Description,
+                        PhoneNumber = item.PhoneNumber,
+                        Price = item.Price,
+                        PriceToPay = item.PriceToPay,
+                        LeasingPeriod = item.LeasingPeriod,
+                        ProductType = item.ProductType
+                    });
+            }
+
+            return result;
+        }
     }
 }
