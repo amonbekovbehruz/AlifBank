@@ -10,6 +10,10 @@ namespace AlifBank.Entities
 
         public string? Description { get; set; }
 
+        public int LeasingPeriod { get; set; }
+
+        public int Price { get; set; }
+
         public ProductType ProductType { get; set; }
 
         public DateTime CreatedDateTime { get; set; }

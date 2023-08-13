@@ -16,9 +16,16 @@ namespace AlifBank.DTO
 
             [Required]
             public ProductType ProductType { get; set; }
+
+            [Required]
+            public int Price { get; set; }
+            
+            [Required]
+            public int LeasingPeriod { get; set; }
+
         }
 
-        public abstract class IdHasBase
+        public abstract class IdHasBase : Base
         {
             public string Id { get; set; }
         }
