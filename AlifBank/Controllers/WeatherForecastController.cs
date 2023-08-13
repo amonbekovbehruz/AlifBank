@@ -1,3 +1,4 @@
+using AlifBank.DTO;
 using AlifBank.Entities;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,36 +8,12 @@ namespace AlifBank.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
-
-        private ICollection<Item> Items;
-
-        private readonly ILogger<WeatherForecastController> _logger;
-
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
-        {
-            _logger = logger;
-        }
-
-        [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
-        {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
-        }
+        private ICollection<Item> Items = new List<Item>();
 
         [HttpPost]
         [ProducesResponseType(typeof(string), StatusCodes.Status204NoContent)]
-        public string AddItem() { 
-            
+        public string AddItem(ItemDto.Add model) {
+            return "Hello World";
         }
     }
 }
