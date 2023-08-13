@@ -22,7 +22,6 @@ namespace AlifBank.DTO
             
             [Required]
             public int LeasingPeriod { get; set; }
-
         }
 
         public abstract class IdHasBase : Base
@@ -31,5 +30,9 @@ namespace AlifBank.DTO
         }
 
         public class Add : Base { }
+
+        public class Get : IdHasBase {
+            public int PriceToPay { get; set; }
+        }
     }
 }

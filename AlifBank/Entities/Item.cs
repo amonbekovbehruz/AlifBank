@@ -14,6 +14,8 @@ namespace AlifBank.Entities
 
         public int Price { get; set; }
 
+        public double PriceToPay { get; set; }
+
         public ProductType ProductType { get; set; }
 
         public DateTime CreatedDateTime { get; set; }

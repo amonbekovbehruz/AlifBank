@@ -11,17 +11,19 @@ namespace AlifBank.Controllers
     {
         private ItemService Service { get; }
 
+        private ICollection<Item> Items = new List<Item>();
+
         public ItemsController(ItemService service)
         {
             Service = service;
         }
-
-        private ICollection<Item> Items = new List<Item>();
 
         [HttpPost]
         [ProducesResponseType(typeof(string), StatusCodes.Status204NoContent)]
         public string AddItem(ItemDto.Add model) {
             Service.Add();
         }
+
+
     }
 }
