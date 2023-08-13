@@ -16,6 +16,8 @@ namespace AlifBank.Entities
 
         public double PriceToPay { get; set; }
 
+        public string PhoneNumber { get; set; }
+
         public ProductType ProductType { get; set; }
 
         public DateTime CreatedDateTime { get; set; }

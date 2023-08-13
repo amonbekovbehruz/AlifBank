@@ -18,14 +18,15 @@ namespace AlifBank.Services
                 Description = model.Description,
                 Price = model.Price,
                 PriceToPay = CalculatePercentage.calculatePercentage(model.ProductType, model.LeasingPeriod, model.Price),
+                PhoneNumber = model.PhoneNumber,
                 ProductType = model.ProductType,
                 CreatedDateTime = DateTime.Now,
                 LeasingPeriod = model.LeasingPeriod,
             };
 
             items.Add(item);
-
-            return $"Added Successfully {SendSMS.SendDetailsSMS(item)}";
+            SendSMS.SendDetailsSMS(item);
+            return $"Added Successfully" + $"{item.Id}";
         }
     }
 }

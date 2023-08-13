@@ -18,6 +18,9 @@ namespace AlifBank.DTO
             public ProductType ProductType { get; set; }
 
             [Required]
+            public string PhoneNumber { get; set; } 
+
+            [Required]
             public int Price { get; set; }
             
             [Required]
